@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20230727 11:12:45.985" rpa="false" schemaversion="3">
+<suite id="s1" name="HelloWorld" source="c:\Users\Admin\Desktop\LearnRobotFramwork\TestSeleniumRobot\HelloWorld.robot">
+<test id="s1-t1" name="First Test" line="6">
+<kw name="Open browser">
+<arg>https://google.com</arg>
+<arg>chrome</arg>
+<msg timestamp="20230727 11:12:46.111" level="FAIL">No keyword with name 'Open browser' found.</msg>
+<status status="FAIL" starttime="20230727 11:12:46.110" endtime="20230727 11:12:46.112"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20230727 11:12:46.115" endtime="20230727 11:12:46.116"/>
+</kw>
+<kw name="Close Browser">
+<status status="NOT RUN" starttime="20230727 11:12:46.121" endtime="20230727 11:12:46.121"/>
+</kw>
+<status status="FAIL" starttime="20230727 11:12:46.104" endtime="20230727 11:12:46.123">No keyword with name 'Open browser' found.</status>
+</test>
+<status status="FAIL" starttime="20230727 11:12:45.993" endtime="20230727 11:12:46.129"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="HelloWorld">HelloWorld</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230727 11:12:46.090" level="ERROR">Error in file 'c:\Users\Admin\Desktop\LearnRobotFramwork\TestSeleniumRobot\HelloWorld.robot' on line 2: Importing library 'SeleniumLibrary' failed: ModuleNotFoundError: No module named 'SeleniumLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  c:\Users\Admin\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src\robotframework_debug_adapter
+  C:\Users\Admin\Desktop\LearnRobotFramwork\TestSeleniumRobot
+  c:\Users\Admin\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src
+  c:\Users\Admin\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src\robotframework_ls\vendored
+  c:\ProgramData\robocorp\ht\9cf649c_b1f3c24_f8170f6e\python39.zip
+  c:\ProgramData\robocorp\ht\9cf649c_b1f3c24_f8170f6e\DLLs
+  c:\ProgramData\robocorp\ht\9cf649c_b1f3c24_f8170f6e\lib
+  c:\ProgramData\robocorp\ht\9cf649c_b1f3c24_f8170f6e
+  c:\ProgramData\robocorp\ht
+  c:\ProgramData\robocorp\ht\9cf649c_b1f3c24_f8170f6e\lib\site-packages
+  c:\ProgramData\robocorp\ht\9cf649c_b1f3c24_f8170f6e\lib\site-packages\win32
+  c:\ProgramData\robocorp\ht\9cf649c_b1f3c24_f8170f6e\lib\site-packages\win32\lib
+  c:\ProgramData\robocorp\ht\9cf649c_b1f3c24_f8170f6e\lib\site-packages\Pythonwin</msg>
+</errors>
+</robot>

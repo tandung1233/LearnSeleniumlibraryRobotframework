@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230727 09:54:06.666" rpa="false" schemaversion="4">
+<suite id="s1" name="YoutubeAutoTest" source="C:\Users\Admin\Desktop\LearnRobotFramwork\YoutubeAutoTest">
+<suite id="s1-s1" name="Hello" source="C:\Users\Admin\Desktop\LearnRobotFramwork\YoutubeAutoTest\hello.robot">
+<test id="s1-s1-t1" name="TC002.1-Lesson 2.1" line="7">
+<kw name="Set Variable" library="BuiltIn">
+<var>${a}</var>
+<arg>${5}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230727 09:54:06.718" level="INFO">${a} = 5</msg>
+<status status="PASS" starttime="20230727 09:54:06.717" endtime="20230727 09:54:06.719"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${b}</var>
+<arg>${4}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230727 09:54:06.721" level="INFO">${b} = 4</msg>
+<status status="PASS" starttime="20230727 09:54:06.720" endtime="20230727 09:54:06.721"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${c}</var>
+<arg>${a} + ${b}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230727 09:54:06.722" level="INFO">${c} = 9</msg>
+<status status="PASS" starttime="20230727 09:54:06.722" endtime="20230727 09:54:06.723"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Tổng 2 số nguyên: ${a} + ${b} là ${c}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230727 09:54:06.723" endtime="20230727 09:54:06.741"/>
+</kw>
+<status status="PASS" starttime="20230727 09:54:06.716" endtime="20230727 09:54:06.742"/>
+</test>
+<test id="s1-s1-t2" name="TC002.2-Lesson 2.2" line="14">
+<kw name="Set Variable" library="BuiltIn">
+<var>${a}</var>
+<arg>${5}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230727 09:54:06.769" level="INFO">${a} = 5</msg>
+<status status="PASS" starttime="20230727 09:54:06.757" endtime="20230727 09:54:06.772"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${b}</var>
+<arg>${4}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230727 09:54:06.775" level="INFO">${b} = 4</msg>
+<status status="PASS" starttime="20230727 09:54:06.774" endtime="20230727 09:54:06.776"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${tong}</var>
+<arg>${a}+${b}+${c}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230727 09:54:06.781" level="INFO">${tong} = 19</msg>
+<status status="PASS" starttime="20230727 09:54:06.776" endtime="20230727 09:54:06.783"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Tổng 3 số nguyên: ${a} + ${b} + ${c} là ${tong}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230727 09:54:06.784" endtime="20230727 09:54:06.785"/>
+</kw>
+<status status="PASS" starttime="20230727 09:54:06.753" endtime="20230727 09:54:06.810"/>
+</test>
+<status status="PASS" starttime="20230727 09:54:06.709" endtime="20230727 09:54:06.817"/>
+</suite>
+<status status="PASS" starttime="20230727 09:54:06.673" endtime="20230727 09:54:06.821"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="YoutubeAutoTest">YoutubeAutoTest</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Hello">YoutubeAutoTest.Hello</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
