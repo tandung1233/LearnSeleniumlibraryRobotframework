@@ -11,7 +11,7 @@
 # Đây là cách khai báo thư viện SeleniumLibrary để sử dụng các keywords (từ khóa) liên quan đến Selenium trong test case.
 Library     SeleniumLibrary
 # *** Test Cases ***: Khai báo mục Test Cases, đây là nơi bạn định nghĩa các test case cụ thể.
-
+Library     Browser
 
 *** Test Cases ***
 # First Test: Tên của test case đầu tiên.

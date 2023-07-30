@@ -1,1 +1,3 @@
-https://www.youtube.com/watch?v=a5Rq0bjz_g8 fouder YoutubeAutoTest
+- https://www.youtube.com/watch?v=a5Rq0bjz_g8 fouder YoutubeAutoTest
+- DuAnInmergers nghĩa là dự án mà mình sẽ viết test thực tế có code của ảnh Đức mình học theo cách code và viết thêm vào
+- File conda.yaml rất quan trọng nha thiếu thư viện thì phải khai báo ở đó. Ví dụ muốn sử dụng Library Browser thì phải khai báo robotframework-browser==16.2.0 đúng phiên bản trong máy tính để nó tải về

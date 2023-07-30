@@ -1,6 +1,5 @@
 *** Settings ***
 Library           SeleniumLibrary
-
 *** Variables ***
 ${BROWSER}        chrome
 ${YOUTUBE_URL}    https://www.youtube.com
