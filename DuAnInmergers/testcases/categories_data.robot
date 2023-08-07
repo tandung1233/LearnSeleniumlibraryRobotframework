@@ -75,7 +75,7 @@ CA-DA-24 Verify when Create Chuyên mục unsuccessfully when "Mã" already exis
 Go to page create data
   When Login to admin
   When Click "QUẢN LÝ DANH MỤC" menu
-  When Click "Data" sub menu to "/data"
+  When Click "Data" sub menu to "/vn/data"
   When Click "Tạo mới" button
 
 Background Happy paths

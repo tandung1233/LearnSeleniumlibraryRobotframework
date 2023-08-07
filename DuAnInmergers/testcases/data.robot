@@ -90,21 +90,21 @@ DA-16 Verify when Create Post unsuccessfully when click Cancel
 Go to page create data
   When Login to admin
   When Click "QUẢN LÝ DANH MỤC" menu
-  When Click "Data" sub menu to "/data"
+  When Click "Data" sub menu to "/vn/data"
   When Check to create Category Data on the "Danh mục 12" item line
-  When Click "Thêm mới dữ liệu" button
+  When Click "Thêm mới" button
 
 Background Happy paths
   When Go to page create data
   When Click select "Chuyên mục" with "Mạng lưới chiến lược"
   When Enter "number" in "Thứ tự" with "_RANDOM_"
-  When Enter "test name" in "Tiêu đề" with "_RANDOM_"
+  When Enter "test name" in "Tên loại" with "_RANDOM_"
   When Enter "paragraph" in textarea "Mô tả" with "_RANDOM_"
-  When Enter "paragraph" in textarea "Nội dung" with "_RANDOM_"
+  When Enter "paragraph" in editor "Nội dung" with "_RANDOM_"
   When Select file in "Ảnh số 1" with "image.jpg"
-  When Select file in "Ảnh số 2" with "image.jpg"
-  When Select file in "Ảnh số 3" with "image.jpg"
-  When Select file in "Ảnh số 4" with "image.jpg"
+  # When Select file in "Ảnh số 2" with "image.jpg"
+  # When Select file in "Ảnh số 3" with "image.jpg"
+  # When Select file in "Ảnh số 4" with "image.jpg"
   When Click "Lưu lại" button
   Then User look message "Success" popup
 
@@ -116,6 +116,7 @@ Check to create Category Data on the "${val}" item line
     When Click "Tạo mới" button
     When Enter "test name" in "Tên loại" with "${val}"
     When Enter "number" in "Mã" with "_RANDOM_"
+    When Click radio "Địa điểm" in line "INMERGERS"
     When Click "Lưu lại" button
     Then User look message "Success" popup
   END

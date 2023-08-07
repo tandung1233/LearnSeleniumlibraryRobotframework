@@ -6,36 +6,37 @@ Library     String
 
 *** Variables ***
 ${BROWSER}              chromium
-${HEADLESS}             ${True}
+${HEADLESS}             ${False}
 ${BROWSER_TIMEOUT}      60 seconds
 ${SHOULD_TIMEOUT}       0.1 seconds
 
-${URL_DEFAULT}          http://dev1.geneat.vn:8102/en
+${URL_DEFAULT}          http://dev1.geneat.vn:8102
 ${STATE}                Evaluate    json.loads('''{}''')    json
 
-
 # *** Variables ***
-# ${BROWSER}      Chromium
-# ${url}          https://the-internet.herokuapp.com/login
-# ${tandung}      https://the-internet.herokuapp.com/secure
-
+# ${BROWSER}    Chromium
+# ${url}    https://the-internet.herokuapp.com/login
+# ${tandung}    https://the-internet.herokuapp.com/secure
 
 # *** Test Cases ***
 # Vald
-#     New Browser    browser=${BROWSER}    headless=false
-#     New Page    ${url}
-#     Type Text    id=username    tomsmith
-#     Type Text    id=password    SuperSecretPassword!
-#     Click    css=button >> text=login
-#     Sleep    4
+#    New Browser    browser=${BROWSER}    headless=false
+#    New Page    ${url}
+#    Type Text    id=username    tomsmith
+#    Type Text    id=password    SuperSecretPassword!
+#    Click    css=button >> text=login
+#    Sleep    4
+
+#    Từ khóa (keyword) tương đương với hàm (function) trong lập trình truyền thống. Bạn tự định nghĩa các từ khóa để thực hiện các hành động cụ thể và logic trong quá trình kiểm thử. Sau đó, trong các bài kiểm tra (test cases), bạn gọi các từ khóa này để thực hiện các hành động kiểm thử mong muốn.
+
 
 *** Keywords ***
+# Đây là tên của từ khóa mà bạn định nghĩa. Từ khóa này sẽ thực hiện việc đăng nhập vào trang admin khi được gọi trong bài kiểm tra (test case).
 Login to admin
     Enter "email" in "Email" with "geneat.soft@gmail.com"
     Enter "text" in "Mật khẩu" with "123456"
     Click "Đăng nhập" button
     User look message "Success" popup
-    Sleep    10s
 
 #### Setup e Teardown
 
@@ -133,14 +134,37 @@ Get Element Form Item By Name
 Required message "${name}" displayed under "${text}" field
     ${element}=    Get Element Form Item By Name    ${name}    //*[contains(@class, "ant-form-item-explain-error")]
     Element Text Should Be    ${element}    ${text}
-    Sleep    10s
 
+# Trong lệnh này, bạn sử dụng ba biến là ${type}, ${name} và ${text} để truyền thông tin đến từ khóa con.
+# Các thông tin này bao gồm:
+# ${type}: Loại dữ liệu cần nhập vào trường (ví dụ: "email" hoặc "text").
+# ${name}: Tên của trường cần nhập dữ liệu (ví dụ: "Email" hoặc "Mật khẩu").
+# ${text}: Nội dung cần nhập vào trường.
+
+# ${type}: Tham số này xác định loại dữ liệu mà bạn muốn tạo ngẫu nhiên. Nó được sử dụng để truyền vào từ khóa "Get Random Text" để tạo dữ liệu ngẫu nhiên phù hợp. Ví dụ, nếu bạn muốn tạo dữ liệu ngẫu nhiên cho trường địa chỉ email, bạn có thể sử dụng ${type} = email.
+# ${name}: Tham số này là tên của trường nhập liệu trên giao diện người dùng. Nó được sử dụng trong từ khóa "Get Element Form Item By Name" để tìm và xác định phần tử trên trang web dựa vào tên trường nhập liệu. Ví dụ, nếu trên giao diện có một trường nhập liệu có tên là "Email", bạn có thể sử dụng ${name} = Email để xác định phần tử đó.
+# ${text}: Tham số này là nội dung dữ liệu mà bạn muốn nhập vào trường. Trong đoạn mã của bạn, nó được tạo ngẫu nhiên bằng cách sử dụng từ khóa "Get Random Text". Sau đó, dữ liệu này được điền vào trường thông qua các bước thực hiện kiểm thử:
+# Clear Text ${element}: Xóa nội dung hiện tại của trường.
+# Fill Text ${element} ${text} True: Điền nội dung dữ liệu ${text} vào trường.
+# Sau khi điền dữ liệu vào trường, đoạn mã kiểm tra kích thước ${text} bằng từ khóa "Get Length". Nếu kích thước lớn hơn 0 (tức là dữ liệu có giá trị), nó sẽ thiết lập một biến toàn cục ${STATE["${name}"]} để lưu trữ dữ liệu đó. Biến toàn cục ${STATE["${name}"]} được sử dụng để lưu trữ thông tin đã nhập vào các trường, có thể sử dụng trong các bài kiểm tra khác.
 Enter "${type}" in "${name}" with "${text}"
+# Đây là một bước trong từ khóa con, dùng để tạo dữ liệu ngẫu nhiên cho việc nhập vào trường.
+# Điều này có thể hữu ích trong việc tạo dữ liệu ngẫu nhiên khi bạn cần đăng nhập với các tài khoản khác nhau trong quá trình kiểm thử.
     ${text}=    Get Random Text    ${type}    ${text}
+    # Đây là một bước trong từ khóa con, dùng để tìm phần tử trên trang web cần thao tác dựa trên tên của trường.
+    # Tìm kiếm phần tử có tên "${name}" (ví dụ: "Email" hoặc "Mật khẩu") và kiểu input là "ant-
     ${element}=    Get Element Form Item By Name    ${name}    //input[contains(@class, "ant-input")]
+    # Đây là một bước trong từ khóa con, dùng để xóa nội dung hiện tại của trường nhập liệu.
     Clear Text    ${element}
+# Đây là một bước trong từ khóa con, dùng để điền dữ liệu vào trường nhập liệu đã được xác định trước đó.
+# ${element}: Đối tượng phần tử đã được tìm thấy trước đó.
+# ${text}: Nội dung dữ liệu cần điền vào trường.
+# True: Sử dụng để kiểm tra dữ liệu điền vào.
     Fill Text    ${element}    ${text}    True
+    # Đây là một bước trong từ khóa con, dùng để lấy độ dài của nội dung dữ liệu "${text}" đã được tạo ra ngẫu nhiên trước đó.
     ${cnt}=    Get Length    ${text}
+    # Đây là một bước trong từ khóa con, dùng để kiểm tra nếu nội dung "${text}" có độ dài lớn hơn 0 (tức là có dữ liệu) thì sẽ thiết lập một biến toàn cục "${STATE["${name}"]}" bằng giá trị của "${text}".
+# Biến toàn cục "${STATE["${name}"]}" được sử dụng để lưu trữ thông tin đã nhập vào các trường, có thể sử dụng trong các bài kiểm tra khác.
     IF    ${cnt} > 0    Set Global Variable    ${STATE["${name}"]}    ${text}
 
 Enter "${type}" in textarea "${name}" with "${text}"
@@ -182,7 +206,7 @@ Enter "${type}" in editor "${name}" with "${text}"
 
 Select file in "${name}" with "${text}"
     ${element}=    Get Element Form Item By Name    ${name}    //input[@type = "file"]
-    Upload File By Selector    ${element}    test/upload/${text}
+    Upload File By Selector    ${element}    DuAnInmergers/upload/${text}
 
 Click radio "${name}" in line "${text}"
     ${element}=    Get Element Form Item By Name

@@ -98,6 +98,7 @@ PO_17 Verify when Create Post unsuccessfully when leaving Categories fields blan
   When Click "Lưu lại" button
   Then Required message "Chuyên mục" displayed under "Xin vui lòng chọn chuyên mục" field
 
+# Chú ý ở đây 
 PO_18 Verify when Create Post unsuccessfully when leaving "Tiêu đề" fields blank
   [Tags]                @smoketest               @regression
   When Go to page create data
@@ -170,7 +171,7 @@ PO_22 Verify when Create Post unsuccessfully when article "Tiêu đề" already 
 Go to page create data
   When Login to admin
   When Click "QUẢN LÝ DANH MỤC" menu
-  When Click "Post" sub menu to "/posts"
+  When Click "Post" sub menu to "/vn/posts"
   When Check to create Category Post on the "Press release" item line
   When Click "Tạo mới bài viết" button
 
