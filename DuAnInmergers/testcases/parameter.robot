@@ -98,7 +98,7 @@ CH_09 Verify when navigation unsuccessfully when editing navigation
 Go to page create data
   When Login to admin
   When Click "SUPERADMIN" menu
-  When Click "Tham số hệ thống" sub menu to "/parameter"
+  When Click "Tham số hệ thống" sub menu to "/vn/parameter"
   When Click "Tạo mới" button
 
 Background Happy paths

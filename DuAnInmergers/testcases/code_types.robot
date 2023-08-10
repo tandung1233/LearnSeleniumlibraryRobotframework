@@ -37,7 +37,7 @@ Go to page create code types ${type}
   When Setup
   When Login to admin
   When Click "QUẢN LÝ DANH MỤC" menu
-  When Click "Code Type" sub menu to "/code-types"
+  When Click "Code Type" sub menu to "/vn/code-types"
   When Select on the "${type}" item line
   When Click "Thêm mới" button
 
