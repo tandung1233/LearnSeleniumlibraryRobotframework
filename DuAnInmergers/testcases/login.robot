@@ -1,9 +1,10 @@
 *** Settings ***
 Resource            ../keywords/common.robot
-
+# Test Setup: Trước khi thực hiện test case, Robot Framework sẽ thực hiện các bước được định nghĩa trong phần "Test Setup". Điều này thường được sử dụng để chuẩn bị các tài nguyên, thiết lập môi trường hoặc điều kiện cần thiết trước khi bắt đầu thực hiện test case.
 Test Setup          Setup
+# Test Teardown: Sau khi hoàn thành test case (dù test case thành công hay không thành công), Robot Framework sẽ thực hiện các bước được định nghĩa trong phần "Test Teardown". Điều này thường được sử dụng để dọn dẹp tài nguyên, giải phóng bộ nhớ hoặc thực hiện các công việc kết thúc sau khi test case kết thúc.
 Test Teardown       Tear Down
-
+# when, then chỉ có tác dụng giúp người đọc dễ hiểu hơn thôi chứ không có gì to tác cả 
 
 *** Test Cases ***
 # Đây là tên của bài kiểm tra (test case). Mỗi bài kiểm tra được đặt tên sao cho dễ hiểu, mô tả đủ thông tin về nội dung của bài kiểm tra. Trong trường hợp này, tên bài kiểm tra là "DN-01 Verify that Đăng nhập successfully with valid Email and Mật khẩu" có thể hiểu là "Xác minh rằng Đăng nhập thành công với Email và Mật khẩu hợp lệ".

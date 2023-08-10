@@ -93,7 +93,7 @@ CA_PO_08 Verify when Create Categories unsuccessfully when click Đóng lại
 Go to page create category post
   When Login to admin
   When Click "QUẢN LÝ DANH MỤC" menu
-  When Click "Post" sub menu to "/post"
+  When Click "Post" sub menu to "/vn/post"
   When Click "Tạo mới" button
 
 Background Happy paths

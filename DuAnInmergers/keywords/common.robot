@@ -10,7 +10,7 @@ ${HEADLESS}             ${False}
 ${BROWSER_TIMEOUT}      60 seconds
 ${SHOULD_TIMEOUT}       0.1 seconds
 
-${URL_DEFAULT}          http://dev1.geneat.vn:8102
+${URL_DEFAULT}          http://localhost:4200
 ${STATE}                Evaluate    json.loads('''{}''')    json
 
 # *** Variables ***
@@ -147,6 +147,7 @@ Required message "${name}" displayed under "${text}" field
 # Clear Text ${element}: Xóa nội dung hiện tại của trường.
 # Fill Text ${element} ${text} True: Điền nội dung dữ liệu ${text} vào trường.
 # Sau khi điền dữ liệu vào trường, đoạn mã kiểm tra kích thước ${text} bằng từ khóa "Get Length". Nếu kích thước lớn hơn 0 (tức là dữ liệu có giá trị), nó sẽ thiết lập một biến toàn cục ${STATE["${name}"]} để lưu trữ dữ liệu đó. Biến toàn cục ${STATE["${name}"]} được sử dụng để lưu trữ thông tin đã nhập vào các trường, có thể sử dụng trong các bài kiểm tra khác.
+
 Enter "${type}" in "${name}" with "${text}"
 # Đây là một bước trong từ khóa con, dùng để tạo dữ liệu ngẫu nhiên cho việc nhập vào trường.
 # Điều này có thể hữu ích trong việc tạo dữ liệu ngẫu nhiên khi bạn cần đăng nhập với các tài khoản khác nhau trong quá trình kiểm thử.
@@ -327,3 +328,6 @@ Wait Until Element Spin
     ${element}=    Set Variable    xpath=//*[contains(@class, "ant-spin-spinning")]
     ${count}=    Get Element Count    ${element}
     IF    ${count} > 0    Wait Until Element Is Not Exist    ${element}
+
+scrolltop
+    Scroll To    None    vertical=top
